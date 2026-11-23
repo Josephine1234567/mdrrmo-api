@@ -18,6 +18,7 @@ RUN printf '%s\n' 'Listen ${PORT}' > /etc/apache2/ports.conf \
       '  Alias /health /var/www/public/api/incidents/list.php' \
       '  <Directory /var/www/public>' \
       '    Options -Indexes' \
+      '    CGIPassAuth On' \
       '    AllowOverride None' \
       '    Require all granted' \
       '  </Directory>' \
