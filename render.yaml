@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: mdrrmo-api
+    runtime: docker
+    plan: free
+    region: singapore
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: mdrrmo-postgis
+          property: connectionString
+      - key: API_KEY
+        generateValue: true
+
+databases:
+  - name: mdrrmo-postgis
+    databaseName: mdrrmo
+    plan: free
+    region: singapore
+    ipAllowList: []
