@@ -27,7 +27,7 @@ mdrrmo-api/
 
 Create a Render Blueprint from this repository’s `main` branch. `render.yaml` provisions a free Docker web service and a free PostgreSQL database in the same region. Render supplies the internal database URL and generates the API key. The container initializes the schema at startup. Verify the deployment at `/health`. Render’s free database expires after 30 days. See [Docker on Render](https://render.com/docs/docker), [PostGIS support](https://render.com/docs/postgresql-extensions), and [free tier limits](https://render.com/docs/free).
 
-In Hatchable project Setup, set `RENDER_API_URL` to the Render service HTTPS origin and `RENDER_API_KEY` to the generated `API_KEY` value from the Render service’s Environment page. Hatchable sends the key from its server-side routes. Keep it out of browser JavaScript and Git.
+The Hatchable project uses `https://mdrrmo-api-iyer.onrender.com` as its default Render origin. In Hatchable Setup, save the generated `API_KEY` from this Render service as `RENDER_API_KEY`. The `render_api_url` setting in Hatchable Configure can point to another Render deployment. Hatchable sends the key from its server-side routes. Keep it out of browser JavaScript and Git.
 
 ## API
 
